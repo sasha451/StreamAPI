@@ -1,6 +1,6 @@
 # 3. Stream API Task
 
-### Deadline: Monday, March 01, 2019 23:59
+### Deadline: Monday, March 27, 2019 23:59
 
 ## Теория
 
