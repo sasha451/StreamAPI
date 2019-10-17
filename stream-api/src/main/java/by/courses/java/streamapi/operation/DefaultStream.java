@@ -46,6 +46,6 @@ public class DefaultStream implements Operation<UserBase> {
 
     @Override
     public Collection<UserBase> sortByNameThanByAge(Collection<UserBase> entities) {
-        return null;
+        return entities.stream().sorted(Comparator.comparing(UserBase::getName).thenComparing(UserBase::getAge)).collect(Collectors.toList());
     }
 }
