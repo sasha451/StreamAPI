@@ -91,6 +91,21 @@ class StreamImplTestSpec extends Specification {
         deleted   | 'b' || false
     }
 
+    def "SortByNameThanByAge"() {
+        expect:
+        defaultStream.sortByNameThanByAge(a) == b
+        where:
+        a         || b
+        userBases || [
+                UserBase.of("Alex", 19),
+                UserBase.of("Alex", 40),
+                UserBase.of("Andrey", 40),
+                UserBase.of("Ihar", 22),
+                UserBase.of("Pavel", 19),
+                UserBase.of("Shasha", 17),
+                UserBase.of("Vadim", 18)
+        ]
+    }
     def "AddValueToAllNames"() {
         expect:
         defaultStream.addValueToAllNames(a,b) == c
@@ -106,21 +121,5 @@ class StreamImplTestSpec extends Specification {
                             UserBase.of("Alexw", 40)
         ]
 
-    }
-
-    def "SortByNameThanByAge"() {
-        expect:
-        defaultStream.sortByNameThanByAge(a) == b
-        where:
-        a         || b
-        userBases || [
-                        UserBase.of("Alex", 19),
-                        UserBase.of("Alex", 40),
-                        UserBase.of("Andrey", 40),
-                        UserBase.of("Ihar", 22),
-                        UserBase.of("Pavel", 19),
-                        UserBase.of("Shasha", 17),
-                        UserBase.of("Vadim", 18)
-                        ]
     }
 }
